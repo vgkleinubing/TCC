@@ -1,0 +1,8 @@
+*.swp
+*.o
+*.elf
+*.sym
+*.lst
+*.hex
+*.map
+tags

@@ -1,0 +1,30 @@
+Este programa se baseia no sistema de arquivos pulblicado em
+
+http://elm-chan.org/fsw/ff/00index_e.html
+
+Foram feitas adaptações para funcionar no kit LPC2378 de laboratorio de
+processadores FENG-PUCRS e foi incluido um comando para 
+exibir fotos em um display NOKIA6100
+
+Para compilar:
+make
+As portas I/O do diplay LCD tem diferenças nos kits de 2009,2010 e 2011.
+Uma variável MODELO definida no Makefile pode ser 2009,2010 ou 2011.
+Para mudar o modelo pode-se editar o Makefile ou especificar na linha de comando:
+make MODELO=2011
+
+Para compilar e gravar na fash por loc21isp:
+Usando a porta serial /dev/ttyS0:
+make isp
+Usando USB no Linux /dev/ttyUSB0
+make ispu
+Usando a porta COM[1-7] (em Windows)
+make isp[1-7]
+
+O programa comunica-se pela porta serial a 19200 Baud 8N1.
+O programa terminal-sd.c é um terminal serial feito para linux.
+Comunica-se por default a 19200 baud usando o /dev/ttyUSB0
+Suporta os comandos get e put para transmitir/receber arquivos.
+
+Nesta versão (de 05/10/2011) 
+foi retirado o suporte a caracteres japoneses (codepage 932)
